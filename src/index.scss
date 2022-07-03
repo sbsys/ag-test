@@ -1,0 +1,35 @@
+@import 'styles';
+
+* {
+    @include normalize;
+}
+
+/* body */
+body {
+    @include flex-col;
+    @include inset;
+    @include roboto;
+    overflow: hidden;
+}
+
+/* root */
+#root {
+    @include flex-col;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+/* modal */
+#modal {
+    z-index: 101;
+}
+
+/* loader */
+#loader {
+    z-index: 102;
+}
+
+/* notification */
+#notification {
+    z-index: 103;
+}

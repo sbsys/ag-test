@@ -1,0 +1,33 @@
+@import 'styles';
+
+.ScrollLayout {
+    flex-grow: 1;
+    overflow: hidden;
+    scrollbar-width: thin;
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background-color: #8f8f8f;
+            border-radius: 0.125rem;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-clip: content-box;
+        background-color: transparent;
+    }
+
+    &.Horizontal {
+        overflow-x: auto;
+        @include flex-row;
+    }
+
+    &.Vertical {
+        overflow-y: auto;
+        @include flex-col;
+    }
+}

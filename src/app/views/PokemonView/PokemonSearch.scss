@@ -1,0 +1,66 @@
+@import 'styles';
+
+$color-dark: #2e678a;
+$color-light: #418fc0;
+
+@mixin border {
+    border-color: $color-dark;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 0.125rem;
+}
+
+.pokemon-search {
+    @include flex-col;
+    gap: 1rem;
+    padding: 1rem;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    & > form {
+        @include flex-row;
+        gap: 1rem;
+    }
+
+    &__search {
+        &-field {
+            @include border;
+            flex-grow: 1;
+            transition: border-color 0.25s ease-in-out;
+
+            &:focus-within {
+                border-color: $color-light;
+            }
+
+            input {
+                padding: 0.25rem;
+            }
+        }
+
+        &-submit {
+            @include border;
+            background-color: $color-dark;
+            color: #fefefe;
+            padding: 0.25rem;
+            transition: all 0.125s ease-in-out;
+
+            &:hover {
+                background-color: $color-light;
+                cursor: pointer;
+                transform: scale(1.02);
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+
+            &:disabled {
+                @include disabled;
+                opacity: 0.75;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@mixin inset($inset: 0, $position: absolute) {
+    bottom: $inset;
+    left: $inset;
+    position: $position;
+    right: $inset;
+    top: $inset;
+}

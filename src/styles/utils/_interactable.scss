@@ -1,0 +1,18 @@
+@mixin interactable {
+    cursor: pointer;
+    transition: transform 0.125s ease-in-out;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    &:disabled,
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:disabled {
+        @include disabled;
+        opacity: 0.98;
+    }
+}
